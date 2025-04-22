@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en-US">
+    <head>
+        <meta charset="UTF-8"/>
+        <script src="https://d3js.org/d3.v7.min.js"></script>
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="./assets/noUiSlider-15.8.1/dist/nouislider.js"></script>
+        <link href="./assets/noUiSlider-15.8.1/dist/nouislider.css" rel="stylesheet">
+        <link rel="stylesheet" href="style.css"> 
+    </head>
+
+    <body>
+        <div id="header"></div>
+
+
+        <div class="sideMenu" id="menuLeft">
+            <div id="uploadForm" class="menuContent"></div>
+            <button id="choiceBtn" class="arrowBtn">
+                <!--
+                <svg class="arrowOpen" viewBox="-3 -3.5 30 30"><path d="m8.286,3.407a1.5,1.5 0 0 0 -2.286,1.277l0,14.632a1.5,1.5 0 0 0 2.286,1.277l11.888,-7.316a1.5,1.5 0 0 0 0,-2.555l-11.888,-7.315z"/></svg>
+                -->
+                <svg class="arrowOpen" viewBox="12 25 30 30"></svg>
+                
+            </button>
+        </div>
+
+       
+        <div class="sideMenu" id="menuRight">
+            <div id="fieldChoice" class="menuContent"></div>
+            <button id="renderBtn" class="arrowBtn">
+                <svg class="arrowOpen" viewBox="12 25 30 30"></svg>
+            </button>
+        </div>
+
+
+        <div class="sideMenu" id="menuBottom">
+            <button id="viewerBtn" class="arrowBtn">
+                <svg class="arrowOpen" viewBox="12 25 30 30"></svg>
+            </button>
+            <div class="menuContent">
+                <div id="viewer"></div>
+                <div id="info"></div>
+            </div>
+        </div>
+
+
+        <div class="sideMenu" id="menuOverlay">
+            <button id="overlayBtn" class="arrowBtn">
+                <svg class="arrowOpen" viewBox="12 25 30 30"></svg>
+            </button>
+            <div class="menuContent"></div>
+            <div id="filterBlockOverlay"></div>
+        </div>
+       
+       
+       <div id="chartArea"></div>
+       <div id="filterBlock"></div>
+    
+       <script>
+        $(function() {
+            $("#uploadForm").load("uploadFormRu.html");
+            $("#fieldChoice").load("fieldChoiceRu.html");
+        });
+        var mainScript = document.createElement('script');
+        mainScript.type = 'module';
+        mainScript.src = 'scripts/main.js';
+        document.body.appendChild(mainScript);
+      </script>
+    </body>
+</html>

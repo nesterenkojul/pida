@@ -1,0 +1,51 @@
+<div id="uploadBlockFile" class="uploadColumn">
+    <h2>Step 1.</h2>
+    <p>Here you upload a selection of files that represent your collection.<br>
+        You can choose multiple individual files or a folder.
+    </p>
+    <p class="limitations">
+        <b>Limitations</b>
+        <br><br>
+        - 500 files maximum.<br><br>
+        - Accepted file types: PDF, PNG, JPG, JPEG.<br><br>
+        - Total collection size should not exceed 5 GB.<br><br>
+        - One file should not exceed 10 MB.<br><br>
+        - Each file should have a unique name.
+    </p>
+    <div class="uploadBbuttons">
+        <input
+        type="file"
+        class="uploadForm"
+        accept=".jpg, .jpeg, .png, .pdf"
+        multiple
+        webkitdirectory
+        style="display: none;"/>
+        <button class="uploadBtn">Choose files</button>
+    </div>
+    <p class="uploadInfo"></p>
+</div>
+
+<div id="uploadBlockMeta" class="uploadColumn">
+    <h2>Step 2.</h2>
+    <p>Here you upload a CSV-file that describes your collection.<br>
+        One row in the table = one previously uploaded file.
+    </p>
+    <p class="limitations">
+        <b>Limitations</b>
+        <br><br>
+        - One file only.<br><br>
+        - Accepted file type: CSV (comma-separated values).<br><br>
+        - One file should not exceed 10 MB.<br><br>
+        - Each entry should have a unique id that is exactly the same as the corresponding file name.
+        
+    </p>
+    <div class="uploadBbuttons">
+        <input
+        type="file"
+        class="uploadForm"
+        accept=".csv"
+        style="display: none;"/>
+        <button class="uploadBtn">Choose file</button>
+    </div>
+    <p class="uploadInfo"></p>
+</div>

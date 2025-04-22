@@ -1,0 +1,51 @@
+<div id="uploadBlockFile" class="uploadColumn">
+    <h2>Шаг 1.</h2>
+    <p>Здесь происходит загрузка файлов, составляющих цифровую коллекцию.<br>
+        Можно выбрать несколько индивидуальных файлов или папку.
+    </p>
+    <p class="limitations">
+        <b>Ограничения</b>
+        <br><br>
+        - Максимум 500 файлов.<br><br>
+        - Принимаемые типы файлов: PDF, PNG, JPG, JPEG.<br><br>
+        - Суммарный объём коллекции не должен превышать 5 GB.<br><br>
+        - Размер одного файла не должен превышать 10 MB.<br><br>
+        - У каждого файла должно быть уникальное имя.
+    </p>
+    <div class="uploadBbuttons">
+        <input
+        type="file"
+        class="uploadForm"
+        accept=".jpg, .jpeg, .png, .pdf"
+        multiple
+        webkitdirectory
+        style="display: none;"/>
+        <button class="uploadBtn">Выбрать файлы</button>
+    </div>
+    <p class="uploadInfo"></p>
+</div>
+
+<div id="uploadBlockMeta" class="uploadColumn">
+    <h2>Шаг 2.</h2>
+    <p>Здесь происходит загрузка CSV-файла с метаданными, описывающими все элементы коллекции.<br>
+        Одна строка таблицы = один загруженный файл.
+    </p>
+    <p class="limitations">
+        <b>Ограничения</b>
+        <br><br>
+        - Только один файл.<br><br>
+        - Принимаемые типы файлов: CSV (comma-separated values).<br><br>
+        - Размер одного файла не должен превышать 10 MB.<br><br>
+        - У каждой записи в таблице должен быть уникальный идентификатор (id), полностью совпадающий с именем соответствующего файла.
+        
+    </p>
+    <div class="uploadBbuttons">
+        <input
+        type="file"
+        class="uploadForm"
+        accept=".csv"
+        style="display: none;"/>
+        <button class="uploadBtn">Выбрать файл</button>
+    </div>
+    <p class="uploadInfo"></p>
+</div>
