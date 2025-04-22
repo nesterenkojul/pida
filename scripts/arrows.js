@@ -7,7 +7,7 @@ import * as msg from "./messages.js";
 
 export function enableArrows() {
     // render the arrow button image + connect it with an on-click function
-    fetch('./assets/arrr.txt')
+    fetch("./arrr.txt")
         .then(response => response.text())
         .then(text => d3.selectAll('.arrowBtn').select('svg').html(text));
 
