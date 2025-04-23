@@ -354,7 +354,6 @@ export async function render(target, type='init') {
     }
     if (!!x_name & !y_name) {
         var [y_vals, max_val] = beeswarmAxis(data, x_name);
-        console.log(y_vals);
         var y = d3.scaleLinear()
             .domain([0, max_val + 1])
             .range([height - 2*axis_margin_h, axis_margin_h]);

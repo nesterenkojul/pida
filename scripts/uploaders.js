@@ -1,6 +1,9 @@
 import * as msg from "./messages.js";
 
 
+const warning_color = '#AB1A1A'; //'#ff4000';
+
+
 // creates image and metadata upload forms
 export function createUploader(type, blockId) {
     var block = document.getElementById(blockId);
@@ -60,14 +63,14 @@ export function createUploader(type, blockId) {
         var file = form.files[0];
         var totalSize = convertFileSize(file.size);
         if (totalSize.split(' ')[1] == "MB" && Number(totalSize.split(' ')[0]) > msg.csv_file_size_limit) {
-            info.style.color = '#ff4000';
+            info.style.color = warning_color;
             info.innerHTML = msg.csv_size_exceeds.replace('%', totalSize);
             clearInput();
             return;
         }
         if (file.type != 'text/csv') {
             var filetype = file.type.includes('/') ? file.type.split('/').pop().toUpperCase() : file.type.toUpperCase();
-            info.style.color = '#ff4000';
+            info.style.color = warning_color;
             var infomsg = !filetype ? 
                     (msg.language == 'eng' ? msg.not_csv.replace('a type %', 'an undefined type') : 
                     msg.not_csv.replace('тип %', 'неопределенного типа')) : 
@@ -85,7 +88,7 @@ export function createUploader(type, blockId) {
         clearInfo();
         var files = form.files;
         if (files.length > msg.file_count_limit) {
-            info.style.color = '#ff4000';
+            info.style.color = warning_color;
             info.innerHTML = msg.total_count_exceeds;
             clearInput();
             return;
@@ -95,7 +98,7 @@ export function createUploader(type, blockId) {
         }, 0);
         totalSize = convertFileSize(totalSize);
         if (totalSize.split(' ')[1] == "MB" && Number(totalSize.split(' ')[0]) > msg.total_file_size_limit) {
-            info.style.color = '#ff4000';
+            info.style.color = warning_color;
             info.innerHTML = msg.total_size_exceeds.replace('%', totalSize);
             clearInput();
             return;
@@ -104,7 +107,7 @@ export function createUploader(type, blockId) {
         for (var file of files) {
             var fileSize = convertFileSize(file.size);
             if (fileSize.split(' ')[1] == "MB" && Number(fileSize.split(' ')[0]) > msg.single_file_size_limit) {
-                info.style.color = '#ff4000';
+                info.style.color = warning_color;
                 info.innerHTML = msg.single_size_exceeds.replace('%', fileSize);
                 clearInput();
                 return;
@@ -115,13 +118,13 @@ export function createUploader(type, blockId) {
                     (msg.language == 'eng' ? msg.wrong_file_type.replace('type %', 'undefined type') : 
                     msg.wrong_file_type.replace('типа %', 'неопределенного типа')) : 
                     msg.wrong_file_type.replace('%', filetype);
-                info.style.color = '#ff4000';
+                info.style.color = warning_color;
                 info.innerHTML = infomsg;
                 clearInput();
                 return;
             }
             if (names.has(file.name)) {
-                info.style.color = '#ff4000';
+                info.style.color = warning_color;
                 info.innerHTML = msg.duplicate_file_names.replace('%name', file.name);
                 clearInput();
                 return;
