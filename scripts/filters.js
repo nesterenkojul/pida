@@ -173,7 +173,6 @@ async function rerender(values) {
     if (!!this) {
         values = values.map(Number);
         var id = this.target.parentNode.id.replace('filter', '');
-        console.log(id);
         if (id == 'X') {
             x_limits = values;
         }

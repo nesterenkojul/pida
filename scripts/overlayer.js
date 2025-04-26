@@ -27,9 +27,12 @@ export function removeOverlays(limit_type, limit, translation, vals_map, ids_map
                     .attr('cy', pos_vals[1]);
                 var text = group.append('text')
                     .text(ids.length);
-                var radius = Number(text.style("width").replace('px', '')) * 1.2;
+                var text_width = text.style("width");
+                text_width = (text_width == 'auto') ? text.node().clientWidth * 4.5 : Number(text_width.replace('px', ''));
+                var radius = text_width * 1.2;
                 radius = radius < prev_radius ? prev_radius : radius;
-                var text_offset_y = Number(text.style("height").replace('px', '')) / 5;
+                var text_height = text.style("height");
+                var text_offset_y = (text_height == 'auto') ? text.node().clientHeight * 3 : Number(text_height.replace('px', '')) / 5;
                 circle.attr('r', radius < 15 ? 15 : radius);
                 text.attr("dx", pos_vals[0])
                     .attr("dy", pos_vals[1] + text_offset_y);
@@ -64,9 +67,12 @@ export function removeOverlays(limit_type, limit, translation, vals_map, ids_map
                     .attr('cy', cy);
                 var text = group.append('text')
                     .text(ids.length);
-                var radius = Number(text.style("width").replace('px', '')) * 1.2;
+                var text_width = text.style("width");
+                text_width = (text_width == 'auto') ? text.node().clientWidth * 4.5 : Number(text_width.replace('px', ''));
+                var radius = text_width * 1.2;
                 radius = radius < prev_radius ? prev_radius : radius;
-                var text_offset_y = Number(text.style("height").replace('px', '')) / 5;
+                var text_height = text.style("height");
+                var text_offset_y = (text_height == 'auto') ? text.node().clientHeight * 3 : Number(text_height.replace('px', '')) / 5;
                 circle.attr('r', radius < 15 ? 15 : radius);
                 text.attr("dx", cx)
                     .attr("dy", cy + text_offset_y);
