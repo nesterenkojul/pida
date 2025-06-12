@@ -4,7 +4,7 @@ import * as arr from "./arrows.js";
 import * as msg from "./messages.js";
 
 
-msg.rus(); // language settings. for english use: msg.eng() + change form load source in index.html
+msg.eng(); // language settings. for russian use: msg.rus() + change form load source in index.html
 arr.enableArrows();
 upl.createUploader('file', 'uploadBlockFile');
 upl.createUploader('meta', 'uploadBlockMeta');
